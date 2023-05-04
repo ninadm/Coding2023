@@ -52,6 +52,9 @@ Kafka provides retention policies for records to automatically delete records.
 ## Fault Tolerance & durability.
 Each record is stored on a persistant storage. so that when a broker goes down, it can be quickly recovered. Kafka also replicates partitions, so that if a partition goes down it can be quickly recovered. the replication factor is a measure of how many backup partitions are created. For example, a replication factor of 3 equals 2 partitions. 
 
+## Read further
+[Comparison of similar technologies](https://blog.scottlogic.com/2018/04/17/comparing-big-data-messaging.html)
+
 
 
 
