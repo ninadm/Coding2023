@@ -26,7 +26,7 @@ The different instances of a queue are called partitions in Kafka. The total num
 A server can hold some or all of these partitions. Each such server holding partitions is called a broker.
 
 ## Record
-Each itme in a partition is called a record.
+Each item in a partition is called a record.
 
 ## Partition Key
 The producer where the events are being produced can specify the key where (which partition) each record will be placed on. This field is called the partition key. In our case we can consider this to be the game name for example. If no key is specified then Kafka will simply decide on a random partition.
