@@ -15,14 +15,13 @@ class Solution:
 
         def dfs(curr):
             if curr in visited:
-                return
+                return False
             if curr == end:
                 return True
             visited.add(curr)
             for n in graph[curr]:
-                if n not in visited:
-                    if dfs(n):
-                        return True
+                if dfs(n):
+                    return True
             return False
 
         visited = set()
