@@ -23,6 +23,29 @@ if I take 5 then I have 5 remaining and get a value of 15
 5   0
 
 
+Dimensions of input for DP are the dimensions of the table
 
 
 '''
+
+n = 6
+w = 15
+input = [(6, 5), (5,6), (6, 4), (6, 6), (3, 5), (7, 2)]
+def knapsack_1(n, w, input):
+    dp = [[0] * (w+1) for _ in range(n+1)]
+    for i in range(1,n+1):
+        for j in range(1, w+1):
+            current_item_weight = input[i-1][0]
+            current_item_value = input[i-1][1]
+            if current_item_weight <= j:  # Use <= instead of <
+                dp[i][j] = max(dp[i-1][j], dp[i-1][j - current_item_weight] + current_item_value)
+            else:
+                dp[i][j] = dp[i-1][j]
+    for i in range(len(dp)):
+        print(dp[i])
+    return dp[n][w]
+                
+
+    
+
+print(knapsack_1(n,w,input))
